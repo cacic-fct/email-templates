@@ -21,6 +21,8 @@ services:
   email-templates_watchtower:
     image: containrrr/watchtower
     restart: always
+    env_file:
+      - secrets.env
     environment:
       - WATCHTOWER_CLEANUP=true
       - WATCHTOWER_SCOPE=email-templates
