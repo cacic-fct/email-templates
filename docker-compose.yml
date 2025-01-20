@@ -17,6 +17,9 @@ services:
       # HTTP Service
       - "traefik.http.services.email-templates-svc.loadBalancer.server.port=4321"
       - "traefik.http.services.email-templates-svc.loadBalancer.passHostHeader=true"
+      # Middlewares
+      - "traefik.http.routers.email-templates.middlewares=email-templates-csp-mw"
+      - "traefik.http.middlewares.email-templates-csp-mw.headers.contentSecurityPolicy=default-src 'self' cacic.dev.br; img-src *; style-src 'unsafe-inline'; object-src 'none'; script-src 'self' 'unsafe-inline'"
 
   email-templates_watchtower:
     image: containrrr/watchtower
