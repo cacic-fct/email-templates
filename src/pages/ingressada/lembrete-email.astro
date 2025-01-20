@@ -1,0 +1,37 @@
+---
+import CacicUnespBlue from "../../layouts/CacicUnespBlue.astro";
+import TemplateButton from "../../components/layouts/CacicUnespBlue/TemplateButton.astro";
+
+export const prerender = false;
+
+const whatsappLink = Astro.url.searchParams.get("whatsapplink") || "https://cacic.dev.br";
+---
+
+<CacicUnespBlue>
+  <div style="padding: 0 32px 0 32px">
+    Calouro, parabéns por ter chegado aqui!<br />Seja bem-vindo à Unesp, sua nova família! 💙<br /><br />Se você ainda
+    não ativou o seu e-mail institucional "@unesp.br", confira o passo&nbsp;3 a seguir:<br /><br />
+
+    <TemplateButton href="https://s.cacic.dev.br/s/calouros" text="Passo 3 - Ativar todos os serviços de rede" />
+    <br />
+    <br />
+    Você deve utilizar o seu e-mail institucional em todas as atividades relacionadas à universidade, então não deixe de
+    ativa-lo!
+    <br />
+    <br />
+    Também é importante estar no grupo de WhatsApp da sua turma, pois é por lá que enviamos todas as informações! <br
+    /><br />
+    <TemplateButton href={whatsappLink} text="Entrar no grupo do WhatsApp" />
+    <br /><br />
+    Para o que der e vier, conte conosco, com os veteranos e com os professores. <br />
+    <br />
+    Atenciosamente, <br />
+    <div style="font-size: 0.9em; line-height: 15px; text-align: left">
+      CACiC – Centro Acadêmico de Ciência da Computação
+    </div>
+    <br />
+    <div style="text-align: center;  font-size: 0.75rem;">
+      Não é calouro? Responda a este e-mail para deixar de receber nossas mensagens.
+    </div>
+  </div>
+</CacicUnespBlue>

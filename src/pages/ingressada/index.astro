@@ -1,0 +1,55 @@
+---
+import Navbar from "../../components/shared/Navbar.astro";
+import ReturnArrow from "../../components/shared/ReturnArrow.astro";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout>
+  <Navbar />
+  <ReturnArrow text="Ingressada" path="/" />
+  <ul>
+    <li>
+      <b>Boas-vindas</b>
+      <br />
+      <b>Layout base:</b> CACiC Unesp Blue
+      <br />
+      <label> Insira o link para o grupo do WhatsApp: <br /><input type="text" id="boas-vindas-input" /></label>
+      <button id="boas-vindas-btn">Gerar</button>
+    </li>
+    <li>
+      <b>Lembrete e-mail institucional</b>
+      <br />
+      <b>Layout base:</b> CACiC Unesp Blue
+      <br />
+      <label> Insira o link para o grupo do WhatsApp: <br /><input type="text" id="lembrete-email-input" /></label>
+      <button id="lembrete-email-btn">Gerar</button>
+    </li>
+  </ul>
+</Layout>
+
+<style>
+  li {
+    margin-bottom: 1rem;
+  }
+</style>
+
+<script>
+  const boasVindasBtn = document.getElementById("boas-vindas-btn");
+  const lembreteEmailBtn = document.getElementById("lembrete-email-btn");
+
+  if (boasVindasBtn) {
+    boasVindasBtn.addEventListener("click", () => {
+      const link = (document.getElementById("boas-vindas-input") as HTMLInputElement)?.value;
+
+      window.location.href = `${window.location.pathname}/boas-vindas?whatsapplink=${link}`;
+    });
+  }
+
+  if (lembreteEmailBtn) {
+    lembreteEmailBtn.addEventListener("click", () => {
+      const link = (document.getElementById("lembrete-email-input") as HTMLInputElement)?.value;
+
+      window.location.href = `${window.location.pathname}/lembrete-email?whatsapplink=${link}`;
+    });
+  }
+</script>

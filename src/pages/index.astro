@@ -1,0 +1,86 @@
+---
+import Navbar from "../components/shared/Navbar.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <Navbar />
+  <section>
+  <h1>Templates de e-mails</h1>
+  <p>
+    <i>Templates</i> (modelos) de e-mail dão um padrão visual e estrutural para as mensagens enviadas. Eles são úteis para
+    garantir que a comunicação seja clara e objetiva.
+  </p>
+
+  <p>
+    Se o <i>template</i> possui gerador, confira se o conteúdo foi preenchido corretamente.
+  </p>
+</section>
+<section>
+  <ul>
+    <li><a href="/ingressada">Ingressada</a></li>
+  </ul>
+  </section>
+
+  <section>
+  <h1>Ajuda</h1>
+  <h2>Como usar?</h2>
+
+  <p>
+    Para usar um <i>template</i> de e-mail, aperte <kbd>CTRL</kbd> + <kbd>A</kbd> e <kbd>CTRL</kbd> + <kbd>C</kbd> para copiar
+    o conteúdo e cole na caixa de texto e-mail.
+    <br />
+    Não esqueça de remover a assinatura automática antes de colar!
+  </p>
+
+  <h2>Como compor?</h2>
+  <ol>
+    <li>
+      Utilize <code>table</code> para estruturar o <i>layout</i> do e-mail. Não é possível usar flexbox ou grid;
+    </li>
+    <li>Utilize somente inline CSS;</li>
+    <li>
+      Utilize <code>!important</code> para garantir que o estilo seja aplicado;
+    </li>
+
+    <li>
+      Não faça templates em modo noturno ou com fundos escuros, pois a maioria dos clientes de e-mail não suportam eles.
+    </li>
+  </ol>
+
+  <h3>Como publicar no repositório?</h3>
+  <ol>
+    <li>
+      Caso o e-mail precise de um gerador, adicione o seguinte código para que o Astro possa obter os parâmetros da URL:
+      <br />
+      <code>
+        export const prerender = false;
+      </code>
+    </li>
+    <li>
+      Não é necessário tomar precauções contra XSS injection, pois o Astro já sanitiza os dados automaticamente;
+    </li>
+  </ol>
+
+  <h2>Recursos</h2>
+  <ul>
+    <li><a href="https://github.com/cacic-fct/email-templates">Repositório</a></li>
+    <li><a href="https://premailer.dialect.ca/">Premailer</a> - Script para formatação do código</li>
+  </ul>
+  <p><b>Para desenvolver localmente:</b></p>
+  <code>
+    git clone https://github.com/cacic-fct/email-templates.git && cd email-templates && bun i && bun run dev
+  </code>
+  </section>
+</Layout>
+
+<style>
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0.5rem 0 0;
+  }
+  section {
+    margin-bottom: 2rem;
+  }
+</style>

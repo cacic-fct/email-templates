@@ -1,0 +1,48 @@
+---
+import CacicUnespBlue from "../../layouts/CacicUnespBlue.astro";
+import TemplateButton from "../../components/layouts/CacicUnespBlue/TemplateButton.astro";
+
+export const prerender = false;
+
+const whatsappLink = Astro.url.searchParams.get("whatsapplink") || "https://cacic.dev.br";
+---
+
+<CacicUnespBlue>
+  <div style="padding: 32px 32px 0">
+    Calouro, parabéns por ter chegado aqui!
+    <br />
+    Seja bem-vindo à Unesp, sua nova família! 💙
+    <br /><br />
+    Está perdido? 🤔
+    <br />
+    Calma, a gente te ajuda! 😊
+    <br /><br />
+    Comece por aqui:
+    <br /><br />
+    <TemplateButton href="https://s.cacic.dev.br/s/calouros" text="Primeiros passos" />
+    <br /><br />
+    Depois, entre no grupo da turma no WhatsApp.
+    <br />
+    É importante estar nesse grupo, pois é por lá que enviamos todas as informações!
+    <br /><br />
+
+    <TemplateButton href={whatsappLink} text="Entrar no grupo do WhatsApp" />
+
+    <br /><br />
+    Para o que der e vier, conte conosco, com os veteranos e com os professores.
+    <br /><br />
+    Atenciosamente,
+    <br />
+    <div style="font-size: 0.9rem; line-height: 15px; text-align: left">
+      CACiC – Centro Acadêmico de Ciência da Computação
+    </div>
+    <br />
+    <div style="text-align: center;  font-size: 0.75rem;">
+      Não é calouro? Responda a este e-mail para deixar de receber nossas mensagens.
+    </div>
+  </div>
+
+  <!-- <a href="https://chat.whatsapp.com/" style="cursor: pointer" target="_blank">
+    <img style="width: 100%; margin: 0 auto; display: block" src="https://i.imgur.com/.png" />
+  </a> -->
+</CacicUnespBlue>

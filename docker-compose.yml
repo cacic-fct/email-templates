@@ -1,0 +1,49 @@
+services:
+  email-templates:
+    image: ghcr.io/cacic-fct/email-templates:main
+    restart: always
+    networks:
+      - traefik
+    labels:
+      - "com.centurylinklabs.watchtower.scope=email-templates"
+      # Traefik - Proxy
+      - "traefik.enable=true"
+      # Router
+      - "traefik.http.routers.email-templates.entryPoints=web, websecure"
+      - "traefik.http.routers.email-templates.rule=Host(`emails.cacic.dev.br`)"
+      - "traefik.http.routers.email-templates.tls=true"
+      - "traefik.http.routers.email-templates.tls.certResolver=letsencrypt"
+      - "traefik.http.routers.email-templates.tls.domains=emails.cacic.dev.br"
+      # HTTP Service
+      - "traefik.http.services.email-templates-svc.loadBalancer.server.port=4321"
+      - "traefik.http.services.email-templates-svc.loadBalancer.passHostHeader=true"
+
+  email-templates_watchtower:
+    image: containrrr/watchtower
+    restart: always
+    environment:
+      - WATCHTOWER_CLEANUP=true
+      - WATCHTOWER_SCOPE=email-templates
+      - WATCHTOWER_POLL_INTERVAL=86400
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - traefik
+    labels:
+      - "com.centurylinklabs.watchtower.scope=email-templates"
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik"
+      - "traefik.http.routers.email-templates-watchtower.entryPoints=websecure"
+      - "traefik.http.routers.email-templates-watchtower.rule=Host(`watchtower.cacic.dev.br`) && PathPrefix(`/email-templates`)"
+      - "traefik.http.routers.email-templates-watchtower.tls=true"
+      - "traefik.http.routers.email-templates-watchtower.tls.certResolver=letsencrypt"
+      - "traefik.http.routers.email-templates-watchtower.tls.domains=watchtower.cacic.dev.br"
+      - "traefik.http.routers.email-templates-watchtower.service=email-templates-watchtower-svc"
+      - "traefik.http.services.email-templates-watchtower-svc.loadBalancer.server.port=8080"
+      - "traefik.http.routers.email-templates-watchtower.middlewares=email-templates-stripprefix, noindex@file"
+      # Remover o caminho /email-templates para redirecionar o pedido corretamente para a API
+      - "traefik.http.middlewares.email-templates-stripprefix.stripprefix.prefixes=/email-templates"
+
+networks:
+  traefik:
+    external: true
