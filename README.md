@@ -4,4 +4,4 @@ O repositório armazena modelos de e-mails para serem utilizados em diversas sit
 
 ## Como utilizar
 
-Acesse [emails.cacic.dev.br](emails.cacic.dev.br) e siga as instruções.
+Acesse [emails.cacic.dev.br](https://emails.cacic.dev.br) e siga as instruções.
