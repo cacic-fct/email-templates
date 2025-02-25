@@ -1,0 +1,161 @@
+---
+import CacicUnespBlue from "../../layouts/CacicUnespBlue.astro";
+import TemplateButton from "../../components/layouts/CacicUnespBlue/TemplateButton.astro";
+
+export const prerender = false;
+
+const whatsappLink =
+  Astro.url.searchParams.get("whatsapplink") || "https://cacic.dev.br";
+---
+
+<CacicUnespBlue>
+  <div style="padding: 0 32px 0 32px">
+    Olá, calouro! <br /><br />
+
+    Neste e-mail, temos informações importantes para você que irá participar de <strong
+      >atividades fora do câmpus</strong
+    >, como o <strong>pedágio</strong> e as <strong>festas</strong>. <br /><br
+    />
+
+    <i
+      >Preste atenção nas recomendações, mesmo que você já tenha participado
+      dessas atividades antes, pois elas podem te ajudar em uma emergência.</i
+    >
+    <br /><br />
+
+    Essas atividades são promovidas por alunos e egressos e não contam com o
+    apoio da universidade e do CACiC, por isso, é importante seguir
+    recomendações para garantir a sua segurança e a dos seus colegas.
+
+    <br />
+
+    <h1>Pedágio</h1>
+    O pedágio é uma atividade tradicional promovida pelos alunos do curso de Ciência
+    da Computação, que tem como objetivo arrecadar fundos para o churrasco anual
+    do curso.
+
+    <br />
+
+    <ul style="list-style-type: none;">
+      <li>☀️ Use protetor solar com FPS 30 ou superior;</li>
+      <li>🧢 Use chapéu ou boné;</li>
+      <li>💧 Leve e beba bastante água;</li>
+      <li>🍪 Alimente-se bem;</li>
+      <li>🌧️ Se chover, busque abrigo.</li>
+    </ul>
+
+    ⚠️ Caso você se sinta mal, não tenha vergonha em pedir ajuda a um colega!
+
+    <h1>Festas</h1>
+
+    As festas podem ser em repúblicas, casas noturnas ou em chácaras afastadas
+    da cidade e nem sempre contam com a presença de seguranças.
+
+    <br /><br />
+
+    <strong>Antes da festa:</strong>
+    <ul style="list-style-type: none;">
+      <li>💭 Planeje como você irá e voltará da festa;</li>
+      <li>🔋 Matenha seu celular com a bateria carregada e com créditos;</li>
+      <li>
+        📍 Informe a um amigo ou a um familiar onde você estará e com quem.
+        Compartilhe a sua localização em tempo real.
+      </li>
+    </ul>
+
+    <strong>Durante a festa:</strong>
+
+    <ul style="list-style-type: none;">
+      <li>
+        🍺 Beba responsavelmente. Combine a ingestão de álcool com bastante
+        água;
+      </li>
+      <li>
+        🚬 Não misture bebidas alcoólicas, energéticos, drogas e outras
+        substâncias;
+      </li>
+      <li>
+        🫂 Use drogas somente sob a supervisão de pessoas de confiança. Não
+        compartilhe cigarros, cachimbos ou seringas.*
+      </li>
+      <li>🤨 Não confie em desconhecidos, nem mesmo em veteranos.</li>
+    </ul>
+
+    <strong>Após a festa:</strong>
+
+    <ul style="list-style-type: none;">
+      <li>🚗 Não aceite carona de desconhecidos;</li>
+      <li>
+        🛏️ Previna-se contra ISTs. Confira a série de posts do CACiC sobre o
+        tema para saber mais:
+        <ol>
+          <li>
+            <a href="https://www.instagram.com/p/CX3xXzXLATD"
+              >Transmissão de ISTs e redução de danos;</a
+            >
+          </li>
+          <li>
+            <a href="https://www.instagram.com/p/CYCUTTqLycV"
+              >Vença o medo e a vergonha;</a
+            >
+          </li>
+          <li>
+            <a href="https://www.instagram.com/p/CYH8N8CLSNQ"
+              >Informações sobre preservativos.</a
+            >
+          </li>
+        </ol>
+      </li>
+    </ul>
+
+    ℹ️ Você pode encontrar preservativos na Seção Técnica de Saúde, localizada
+    próximo à cantina do Bloco 3, na ala norte do câmpus.
+
+    <br /><br />
+    <sup style="font-size: 0.60rem;"
+      >*O CACiC adota uma política de conscientização com base na redução de
+      danos.</sup
+    >
+
+    <h1>Se você ver algo, diga algo</h1>
+
+    👁️ Assim que você notar qualquer comportamento inadequado, perigo potencial
+    ou atividade suspeita, tome uma atitude!
+    <br />
+    💬 Comunique os responsáveis pela atividade, um colega ou um veterano.
+    <br />
+    🆘 Em uma emergência, antes de qualquer coisa, acione a <strong
+      >Polícia Militar (190)</strong
+    >, o Serviço de <strong>Emergência em Saúde (192)</strong> ou o <strong
+      >Corpo de Bombeiros (193)</strong
+    >.
+    <br /><br />
+
+    📝 Caso necessário, registre um Boletim de Ocorrência e abra um protocolo na
+    Ouvidoria da Unesp. <a
+      href="https://manual.cacic.dev.br/canais-de-den%C3%BAncia/"
+      >Conheça os canais de denúncia disponíveis</a
+    >.
+
+    <br />
+    <br />
+
+    ⚠️ Se você não se sentir seguro, peça ajuda.
+
+    <br /><br />
+    <br />
+
+    Para o que der e vier, conte conosco, com os veteranos e com os professores. <br
+    />
+    <br />
+    Atenciosamente, <br />
+    <div style="font-size: 0.9em; line-height: 15px; text-align: left">
+      CACiC – Centro Acadêmico de Ciência da Computação
+    </div>
+    <br />
+    <div style="text-align: center;  font-size: 0.75rem;">
+      Não é calouro? Responda a este e-mail para deixar de receber nossas
+      mensagens.
+    </div>
+  </div>
+</CacicUnespBlue>

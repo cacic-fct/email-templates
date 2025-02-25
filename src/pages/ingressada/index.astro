@@ -24,6 +24,13 @@ import Layout from "../../layouts/Layout.astro";
       <label> Insira o link para o grupo do WhatsApp: <br /><input type="text" id="lembrete-email-input" /></label>
       <button id="lembrete-email-btn">Gerar</button>
     </li>
+    <li>
+      <b>Orientações para atividades fora do câmpus</b>
+      <br />
+      <b>Layout base:</b> CACiC Unesp Blue
+      <br />
+      <button id="orientacoes-fora-email-btn">Gerar</button>
+    </li>
   </ul>
 </Layout>
 
@@ -36,6 +43,7 @@ import Layout from "../../layouts/Layout.astro";
 <script>
   const boasVindasBtn = document.getElementById("boas-vindas-btn");
   const lembreteEmailBtn = document.getElementById("lembrete-email-btn");
+  const orientacoesForaEmailBtn = document.getElementById("orientacoes-fora-email-btn");
 
   if (boasVindasBtn) {
     boasVindasBtn.addEventListener("click", () => {
@@ -50,6 +58,12 @@ import Layout from "../../layouts/Layout.astro";
       const link = (document.getElementById("lembrete-email-input") as HTMLInputElement)?.value;
 
       window.location.href = `${window.location.pathname}/lembrete-email?whatsapplink=${link}`;
+    });
+  }
+
+  if (orientacoesForaEmailBtn) {
+    orientacoesForaEmailBtn.addEventListener("click", () => {
+      window.location.href = `${window.location.pathname}/orientacoes-atividades-fora`;
     });
   }
 </script>
